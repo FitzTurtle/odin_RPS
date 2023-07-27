@@ -8,8 +8,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     let lowerPlayer = playerSelection.toLowerCase();
     let lowerComp = computerSelection.toLowerCase();
-    let playerVictory = "You won! " playerSelection + " beats " + computerSelection;
-    let compVictory =  "You lost! " computerSelection + " beats " + playerSelection;
+    let playerVictory = "You won! " + playerSelection + " beats " + computerSelection;
+    let compVictory =  "You lost! " + computerSelection + " beats " + playerSelection;
 
     if(lowerPlayer == lowerComp) {
         return "You tied! "+ playerSelection + " ties with " + computerSelection; 
