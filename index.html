@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -15,22 +15,38 @@
 
         <div class="gamefield">
             <div class="playerside">
-                <div class="rock card">
-                    Rock
-                </div>
-                <div class="paper card">
-                    Paper
+                <h2 class="sidetitle">
+                    Player: pick an option!
+                </h2>
+                <div class="playercards">
+                    <div class="rock card">
+                        Rock
+                    </div>
+                    <div class="paper card">
+                        Paper
+                    </div>
+
+                    <div class="scissors card">
+                        Scissors
+                    </div>
                 </div>
 
-                <div class="scissors card">
-                    Scissors
-                </div>
-
+            </div>
+            <div class="versus">
+                VS.
             </div>
             <div class="compside">
-                Comps choice
+                <h2 class="compTitle">
+                    Computer's Choice:
+                </h2>
+                <div class="compcard">
+                </div>
             </div>
 
+        </div>
+
+        <div class="result">
+            The result will go here!
         </div>
 
         <div class="footer">

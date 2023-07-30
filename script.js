@@ -1,10 +1,30 @@
 const choices = ["Rock","Paper","Scissors"];
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+const result = document.querySelector(".result");
 let playerPoints;
 let compPoints;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*3)];
 }
+
+
+
+rock.addEventListener('click', () => {
+    console.log(playRound("rock", getComputerChoice()));
+});
+
+paper.addEventListener('click', () => {
+    console.log(playRound("paper", getComputerChoice()));
+});
+
+scissors.addEventListener('click', () => {
+    console.log(playRound("scissors", getComputerChoice()));
+});
+
+
 
 
 function playRound(playerSelection, computerSelection) {
