@@ -38,6 +38,7 @@
 .playercards {
     display: flex;
     justify-content: space-between;
+    flex: 1;
 }
 
 
@@ -56,6 +57,7 @@
     height: 100px;
     width: 100px;
     border: 1px solid black;
+    align-self: center;
 }
 
 .compside {
@@ -63,12 +65,17 @@
     flex-direction: column;
     flex: 2;
     align-items: center;
+    justify-content: center;
 }
 
 .compcard {
-    margin-bottom: 15px;
+    margin: 10px;
     padding: 10px;
     height: 150px;
     width: 150px;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
