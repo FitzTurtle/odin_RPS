@@ -1,0 +1,32 @@
+
+
+.container {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* temporary for design */
+.container > div {
+    border: 1px solid black;
+}
+
+.gamefield {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.gamefield > div {
+    border: 1px solid black;
+}
+
+.playerside {
+    flex: 2;
+}
+
+.compside {
+    flex: 1;
+}
+
