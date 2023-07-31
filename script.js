@@ -2,9 +2,10 @@ const choices = ["rock","paper","scissors"];
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
-const result = document.querySelector(".result");
+const result = document.querySelector("#printResult");
 const choice = document.querySelector(".compcard");
 const choiceImg = document.createElement('img');
+
 let playerPoints;
 let compPoints;
 
@@ -71,20 +72,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    playerPoints = 0;
-    compPoints = 0;
+// function game() {
+//     playerPoints = 0;
+//     compPoints = 0;
 
-    while(playerPoints + compPoints < 5){
-        console.log(playRound(selectValid(),getComputerChoice()));
-    }
+//     while(playerPoints + compPoints < 5){
+//         console.log(playRound(selectValid(),getComputerChoice()));
+//     }
 
-    if(playerPoints > compPoints){
-        console.log("Congrats! you won with "+playerPoints+" total games won out of 5");
-    } else {
-        console.log("You lose! The computer won " + compPoints + " out of 5 games");
-    }
-}
+//     if(playerPoints > compPoints){
+//         console.log("Congrats! you won with "+playerPoints+" total games won out of 5");
+//     } else {
+//         console.log("You lose! The computer won " + compPoints + " out of 5 games");
+//     }
+// }
 
 function selectValid() {
     valid = false;

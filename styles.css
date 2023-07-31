@@ -81,6 +81,7 @@ body{
 .versus {
     font-size: 2em;
     font-weight: bold;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +109,9 @@ body{
 }
 
 .result {
+    font-size: 1.5em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;;
 }
