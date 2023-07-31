@@ -13,6 +13,7 @@ let compPointSpan = document.querySelector(".computerPointSpan");
 
 let playerPoints = 0;
 let compPoints = 0;
+let gameover = false;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*3)];
@@ -32,27 +33,34 @@ function showResult(gameResult) {
 }
 
 rock.addEventListener('click', () => {
-    let computerChoice = getComputerChoice();
-    let gameResult = playRound("rock", computerChoice);
-    showComputerChoice(computerChoice);
-    showResult(gameResult);      
-    checkVictory();
+
+    if(!gameover) {
+        let computerChoice = getComputerChoice();
+        let gameResult = playRound("rock", computerChoice);
+        showComputerChoice(computerChoice);
+        showResult(gameResult);      
+        checkVictory();
+    };
 });
 
 paper.addEventListener('click', () => {
-    let computerChoice = getComputerChoice();
-    let gameResult = playRound("paper", computerChoice);
-    showComputerChoice(computerChoice);
-    showResult(gameResult); 
-    checkVictory();
+    if(!gameover) {
+        let computerChoice = getComputerChoice();
+        let gameResult = playRound("paper", computerChoice);
+        showComputerChoice(computerChoice);
+        showResult(gameResult); 
+        checkVictory();
+    }
 });
 
 scissors.addEventListener('click', () => {
-    let computerChoice = getComputerChoice();
-    let gameResult = playRound("scissors", computerChoice);
-    showComputerChoice(computerChoice);
-    showResult(gameResult);
-    checkVictory();
+    if(!gameover) {
+        let computerChoice = getComputerChoice();
+        let gameResult = playRound("scissors", computerChoice);
+        showComputerChoice(computerChoice);
+        showResult(gameResult);
+        checkVictory();
+    }
 });
 
 
@@ -85,9 +93,11 @@ function playRound(playerSelection, computerSelection) {
 
 function checkVictory() {
     if (playerPoints == 5) {
+        gameover=true;
         gameEnd("You won! Play again?");
     }
     else if (compPoints == 5) {
+        gameover=true;
         gameEnd("You lost! Play again?")
     }
 }
@@ -103,6 +113,7 @@ function reset(){
     printResult = document.querySelector("#printResult");
     playerPointSpan = document.querySelector(".playerPointSpan");
     compPointSpan = document.querySelector(".computerPointSpan");
+    gameover=false;
 }
 
 // function game() {
