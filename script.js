@@ -19,7 +19,7 @@ function getComputerChoice() {
 }
 
 function showComputerChoice(compchoice) {
-    choiceImg.setAttribute('src', `/images/${compchoice}.png`);
+    choiceImg.setAttribute('src', `images/${compchoice}.png`);
     // choice.textContent = compchoice;
     choice.appendChild(choiceImg);
 }
