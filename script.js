@@ -19,7 +19,7 @@ function getComputerChoice() {
 }
 
 function showComputerChoice(compchoice) {
-    choiceImg.setAttribute('src', `../images/${compchoice}.png`);
+    choiceImg.setAttribute('src', `/images/${compchoice}.png`);
     // choice.textContent = compchoice;
     choice.appendChild(choiceImg);
 }
@@ -120,22 +120,22 @@ function reset(){
 //     }
 // }
 
-function selectValid() {
-    valid = false;
-    let playerSelection;
-    while (!valid) {
-        playerSelection = prompt().toLowerCase();
+// function selectValid() {
+//     valid = false;
+//     let playerSelection;
+//     while (!valid) {
+//         playerSelection = prompt().toLowerCase();
 
-        switch(playerSelection){
-            case "rock":
-            case "paper":
-            case "scissors":
-                valid = true;
-                break;
-            default:
-                console.log("please type rock paper or scissors");
-        }
-    }
-    return playerSelection;
+//         switch(playerSelection){
+//             case "rock":
+//             case "paper":
+//             case "scissors":
+//                 valid = true;
+//                 break;
+//             default:
+//                 console.log("please type rock paper or scissors");
+//         }
+//     }
+//     return playerSelection;
 
-}
+// }
