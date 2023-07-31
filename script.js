@@ -2,12 +2,17 @@ const choices = ["rock","paper","scissors"];
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
-const result = document.querySelector("#printResult");
 const choice = document.querySelector(".compcard");
 const choiceImg = document.createElement('img');
+const result = document.querySelector(".result");
+const resultReset = document.querySelector(".result").innerHTML;
 
-let playerPoints;
-let compPoints;
+let printResult = document.querySelector("#printResult");
+let playerPointSpan = document.querySelector(".playerPointSpan");
+let compPointSpan = document.querySelector(".computerPointSpan");
+
+let playerPoints = 0;
+let compPoints = 0;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random()*3)];
@@ -20,7 +25,10 @@ function showComputerChoice(compchoice) {
 }
 
 function showResult(gameResult) {
-    result.textContent = gameResult;
+    printResult.textContent = gameResult;
+    playerPointSpan.textContent = playerPoints;
+    compPointSpan.textContent = compPoints;
+
 }
 
 rock.addEventListener('click', () => {
@@ -28,6 +36,7 @@ rock.addEventListener('click', () => {
     let gameResult = playRound("rock", computerChoice);
     showComputerChoice(computerChoice);
     showResult(gameResult);      
+    checkVictory();
 });
 
 paper.addEventListener('click', () => {
@@ -35,6 +44,7 @@ paper.addEventListener('click', () => {
     let gameResult = playRound("paper", computerChoice);
     showComputerChoice(computerChoice);
     showResult(gameResult); 
+    checkVictory();
 });
 
 scissors.addEventListener('click', () => {
@@ -42,6 +52,7 @@ scissors.addEventListener('click', () => {
     let gameResult = playRound("scissors", computerChoice);
     showComputerChoice(computerChoice);
     showResult(gameResult);
+    checkVictory();
 });
 
 
@@ -70,6 +81,28 @@ function playRound(playerSelection, computerSelection) {
         playerPoints++;
         return playerVictory;
     }
+}
+
+function checkVictory() {
+    if (playerPoints == 5) {
+        gameEnd("You won! Play again?");
+    }
+    else if (compPoints == 5) {
+        gameEnd("You lost! Play again?")
+    }
+}
+
+function gameEnd(victor){
+    result.innerHTML = `<div class="gameEnd">${victor}</div><button id="reset" onclick = "reset()">Play again</button>`;
+}
+
+function reset(){
+    playerPoints = 0;
+    compPoints = 0;
+    result.innerHTML = resultReset;
+    printResult = document.querySelector("#printResult");
+    playerPointSpan = document.querySelector(".playerPointSpan");
+    compPointSpan = document.querySelector(".computerPointSpan");
 }
 
 // function game() {
