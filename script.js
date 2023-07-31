@@ -1,9 +1,10 @@
-const choices = ["Rock","Paper","Scissors"];
+const choices = ["rock","paper","scissors"];
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const result = document.querySelector(".result");
 const choice = document.querySelector(".compcard");
+const choiceImg = document.createElement('img');
 let playerPoints;
 let compPoints;
 
@@ -12,26 +13,34 @@ function getComputerChoice() {
 }
 
 function showComputerChoice(compchoice) {
-    choice.textContent = compchoice;
+    choiceImg.setAttribute('src', `../images/${compchoice}.png`);
+    // choice.textContent = compchoice;
+    choice.appendChild(choiceImg);
+}
+
+function showResult(gameResult) {
+    result.textContent = gameResult;
 }
 
 rock.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
+    let gameResult = playRound("rock", computerChoice);
     showComputerChoice(computerChoice);
-    console.log(playRound("rock", computerChoice));
-    
+    showResult(gameResult);      
 });
 
 paper.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
+    let gameResult = playRound("paper", computerChoice);
     showComputerChoice(computerChoice);
-    console.log(playRound("paper", getComputerChoice()));
+    showResult(gameResult); 
 });
 
 scissors.addEventListener('click', () => {
     let computerChoice = getComputerChoice();
+    let gameResult = playRound("scissors", computerChoice);
     showComputerChoice(computerChoice);
-    console.log(playRound("scissors", getComputerChoice()));
+    showResult(gameResult);
 });
 
 
